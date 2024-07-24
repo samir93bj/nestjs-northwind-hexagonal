@@ -17,13 +17,14 @@ import { ProductApplication } from '../../../core/application/ProductApplication
 import { ProductCreatorFilter } from '../exception-filters/product-exception.filter';
 import { AppResponse } from '../model/app.response';
 import { CreateProductRequest } from '../model/create-product.request';
+import { PRODUCT_APPLICATION } from '../../../core/core.module';
 
 @ApiTags('Products')
 @Controller('/product')
 @UseFilters(ProductCreatorFilter)
 export class ProductController {
   constructor(
-    @Inject('PRODUCT_APPLICATION') private application: ProductApplication,
+    @Inject(PRODUCT_APPLICATION) private application: ProductApplication,
   ) {}
 
   @ApiBadRequestResponse({ description: 'Invalid category id or supplier id' })
