@@ -7,6 +7,7 @@ import { CategoryEntity } from './northwind-database/entities/category.entity';
 import { ProductEntity } from './northwind-database/entities/product.entity';
 import { SupplierEntity } from './northwind-database/entities/supplier.entity';
 import { NorthwindDatabaseModule } from './northwind-database/northwind-database.module';
+import { HttpServerModule } from './http-server/http-server.module';
 
 @Module({
   providers: [
@@ -21,6 +22,7 @@ import { NorthwindDatabaseModule } from './northwind-database/northwind-database
   ],
   imports: [
     NorthwindDatabaseModule,
+    HttpServerModule,
     TypeOrmModule.forFeature([CategoryEntity, ProductEntity, SupplierEntity]),
   ],
 })
