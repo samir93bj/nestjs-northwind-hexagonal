@@ -21,7 +21,10 @@ describe('ProductDomainService', () => {
   it('should call ProductRepository.save()"', async () => {
     await service.save({ productId: 1, unitPrice: 100 } as Product);
 
-    expect(repositoryMock.save).toHaveBeenCalled();
+    expect(repositoryMock.save).toHaveBeenCalledWith({
+      productId: 1,
+      unitPrice: 100,
+    });
   });
 
   it('should return true productService.validateProductPrice() when unitPrice is greater than 0 "', async () => {
