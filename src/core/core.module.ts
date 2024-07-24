@@ -73,6 +73,7 @@ export class CoreModule {
 
     return {
       module: CoreModule,
+      global: true,
       imports: [...modules],
       providers: [
         ProductApplicationProvider,
