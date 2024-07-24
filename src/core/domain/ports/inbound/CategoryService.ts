@@ -1,4 +1,4 @@
-import { Category } from '../../Category';
+import { Category } from '../../entities/Category';
 
 export interface CategoryService {
   findById(id: number): Promise<Category>;

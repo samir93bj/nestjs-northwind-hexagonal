@@ -1,4 +1,4 @@
-import { Supplier } from '../../Supplier';
+import { Supplier } from '../../entities/Supplier';
 
 export interface SupplierService {
   findById(id: number): Promise<Supplier>;
